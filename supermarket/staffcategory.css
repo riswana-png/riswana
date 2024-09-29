@@ -1,0 +1,42 @@
+.Main{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+    height: calc(100vh - 80px);
+    background: linear-gradient(
+        rgba(0, 0, 0, 0.5), /* Black with 50% opacity */
+        rgba(0, 0, 0, 0.5) /* Black with 50% opacity */
+    ), url(Assets/7000952.jpg);
+    background-size: cover;
+}
+.Logincontainer{
+    width: 400px;
+    height: 450px;
+    display: flex;
+    align-items: center;
+    justify-content: space-evenly;
+    flex-direction: column;
+    border: 2px solid white;
+    border-radius: 16px;
+
+}
+.Logininput1{
+    width: 70%;
+    height: 35px;
+    border: 1px solid white;
+    border-radius: 10px;
+    margin-bottom: 10px;
+}
+.Logininput2{
+    width: 35%;
+    height: 35px;
+    border: none;
+    background-color: rgba(108, 18, 108, 0.571);
+    border-radius: 10px;
+    color: white;
+}
+.Logininput2:hover{
+    background-color: white;
+    color: black;
+}
