@@ -18,7 +18,6 @@
             echo "Database not connected";
         }
 
-        
         $sql = "SELECT * FROM items"; 
         $data = mysqli_query($conn, $sql);
         if (mysqli_num_rows($data) > 0) {
@@ -26,9 +25,11 @@
             echo "<tr>";
             echo "<th>id</th>";
             echo "<th>name</th>";
-            echo "<th>category</th>";
             echo "<th>price</th>";
             echo "<th>quantity</th>";
+            echo "<th>category</th>";
+            echo "<th>image</th>";  // New header for the image
+            echo "<th>actions</th>"; // Separate actions column
             echo "</tr>";
 
             while ($row = mysqli_fetch_assoc($data)) {
@@ -39,6 +40,17 @@
                 echo "<td>" . htmlspecialchars($row['price']) . "</td>";
                 echo "<td>" . htmlspecialchars($row['quantity']) . "</td>";
                 echo "<td>" . htmlspecialchars($row['category']) . "</td>";
+                
+                // Display the image
+                echo "<td>";
+                if (!empty($row['image_path'])) {
+                    echo "<img src='" . htmlspecialchars($row['image_path']) . "' alt='Image' style='width: 100px; height: auto;'>";
+                } else {
+                    echo "No image";
+                }
+                echo "</td>";
+
+                // Actions (Delete and Edit buttons)
                 echo "<td>
                         <form method='POST' style='display:inline;'>
                             <button value='$id' name='itemdel' type='submit'>Delete</button>
@@ -59,7 +71,6 @@
 </html>
 
 <?php
-
 if (isset($_POST['itemdel'])) {
     $id = $_POST['itemdel'];
     if (!empty($id)) {
@@ -72,7 +83,6 @@ if (isset($_POST['itemdel'])) {
         }
     }
 }
-
 
 mysqli_close($conn);
 ?>

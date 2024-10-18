@@ -40,9 +40,9 @@
                 echo "<tr>";
                 echo "<td>" . htmlspecialchars($row['id']) . "</td>";
                 echo "<td>" . htmlspecialchars($row['name']) . "</td>";
+                echo "<td>" . htmlspecialchars($row['category']) . "</td>";
                 echo "<td>" . htmlspecialchars($row['price']) . "</td>";
                 echo "<td>" . htmlspecialchars($row['quantity']) . "</td>";
-                echo "<td>" . htmlspecialchars($row['category']) . "</td>";
                 echo "<td>
                         <form method='POST' style='display:inline;'>
                             <button value='$id' name='itemdel' type='submit'>Delete</button>
