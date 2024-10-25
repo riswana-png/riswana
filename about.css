@@ -1,0 +1,19 @@
+body {
+    font-family: Arial, sans-serif;
+    margin: 20px;
+    background-color: rgb(250, 235, 215);
+}
+
+.container {
+    max-width: 800px;
+    margin: auto;
+}
+
+h1, h2 {
+    color: black;
+}
+
+ul {
+    list-style-type: disc;
+    margin-left: 20px;
+}
