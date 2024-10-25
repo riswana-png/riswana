@@ -1,0 +1,58 @@
+<?php
+// about.php
+session_start();
+
+// Include header
+include('header.php');
+
+// Define some content for the About page
+$aboutContent = [
+    'title' => 'About Our Supermarket Management System',
+    'description' => 'Our Supermarket Management System is designed to streamline operations, improve customer satisfaction, and enhance inventory management. Our goal is to provide an efficient and user-friendly interface for supermarket managers and staff.',
+    'mission' => 'Our mission is to create a seamless shopping experience for customers while providing supermarket managers with powerful tools to manage their operations effectively.',
+    'features' => [
+        'Real-time inventory tracking',
+        'Sales and performance analytics',
+        'User-friendly interface',
+        'Customer relationship management',
+        'Integrated payment solutions'
+    ],
+    'contact' => 'For inquiries, please contact us at support@supermarket.com'
+];
+?>
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title><?php echo $aboutContent['title']; ?></title>
+    <link rel="stylesheet" href="about.css">
+</head>
+<body>
+
+<div class="container">
+    <h1><?php echo $aboutContent['title']; ?></h1>
+    <p><?php echo $aboutContent['description']; ?></p>
+    
+    <h2>Our Mission</h2>
+    <p><?php echo $aboutContent['mission']; ?></p>
+    
+    <h2>Features</h2>
+    <ul>
+        <?php foreach ($aboutContent['features'] as $feature): ?>
+            <li><?php echo $feature; ?></li>
+        <?php endforeach; ?>
+    </ul>
+
+    <h2>Contact Us</h2>
+    <p><?php echo $aboutContent['contact']; ?></p>
+</div>
+
+<?php
+// Include footer
+include('footer.php');
+?>
+
+</body>
+</html>
